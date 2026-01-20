@@ -20,6 +20,7 @@ class KeyboardMonitor:
         def on_press(key):
             if self.running:
                 self.key_times.append(time.time())
+            return True
         
         # 在独立线程中运行监听器
         self.listener_thread = Thread(
@@ -185,9 +186,9 @@ class MainWindow(QMainWindow):
         
         # 初始显示灰色
         self.dots = [
-            DotWidget(central_widget, 5),  # 上
-            DotWidget(central_widget, 5),  # 中
-            DotWidget(central_widget, 5)   # 下
+            DotWidget(central_widget, 8),  # 上
+            DotWidget(central_widget, 8),  # 中
+            DotWidget(central_widget, 8)   # 下
         ]
         
         for dot in self.dots:
